@@ -10,10 +10,11 @@ class java (
 ) {
   include boxen::config
 
+  $pad_ver = sprintf("%02d", $update_version)
   $jre_url = "${base_download_url}/jre-${version}u${update_version}-macosx-x64.dmg"
   $jdk_url = "${base_download_url}/jdk-${version}u${update_version}-macosx-x64.dmg"
   $wrapper = "${boxen::config::bindir}/java"
-  $jdk_dir = "/Library/Java/JavaVirtualMachines/jdk1.${version}.0_${update_version}.jdk"
+  $jdk_dir = "/Library/Java/JavaVirtualMachines/jdk1.${version}.0_${pad_ver}.jdk"
   $sec_dir = "${jdk_dir}/Contents/Home/jre/lib/security"
 
   package {
